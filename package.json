@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "three": "^0.161.0"
+    "dat.gui": "^0.7.9",
+    "stats.js": "^0.17.0",
+    "three": "^0.161.0",
+    "vite": "^5.1.0"
   }
 }

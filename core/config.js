@@ -14,7 +14,7 @@ export class config {
 	}
 	init() {
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
-
+		
 
 		document.body.appendChild(this.renderer.domElement);
 		this.camera.updateProjectionMatrix();

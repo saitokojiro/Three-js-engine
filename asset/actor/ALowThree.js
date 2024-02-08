@@ -15,9 +15,15 @@ export class ALowThree extends AActor {
 
 		if(this.scene){
 			this.mesh('./../../asset/assets/btn/mediaPlayer.gltf', this.scene)
+			let positionJson = {x:0,y:0,z:0}
 			this.setScale(0.5, 0.5, 0.5)
 			this.setPosition(0, -0.3, -10)
 			console.log("scene loaded")
+			this.debug.setNameFolder("ALowThree")
+			this.debug.addParameter(this.getPosition(), "x", -50, 50)
+			this.debug.addParameter(this.getPosition(), "y", -50, 50)
+			this.debug.addParameter(this.getPosition(), "z", -50, 50)
+			
 		}
 
     }
@@ -26,6 +32,9 @@ export class ALowThree extends AActor {
 	loop() {
 		const loop = () => {
 			requestAnimationFrame(loop);
+			if(this.scene){
+				this.getPosition(true)
+			}
 		};
 		loop();
 	}
