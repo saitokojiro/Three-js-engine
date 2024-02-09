@@ -15,7 +15,6 @@ export class baseMap {
 		console.log("init")
 		this.addLowThree()
 		this.scene.add(this.light)
-		//this.scene.add(this.helper)
 		this.light.position.set(0,0.5,-1)
 		this.light.scale.set(0.1, 0.1, 0.1)
 		
@@ -24,7 +23,7 @@ export class baseMap {
 	async addLowThree(){
 
 		if(this.scene){
-			new ALowThree(this.scene)
+			new ALowThree(this.scene).position.set(0,-1,-3)
 		}else{
 			console.log('baseMap : scene not loaded')
 		}
