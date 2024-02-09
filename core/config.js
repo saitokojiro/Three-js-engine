@@ -26,7 +26,7 @@ export class config {
 
 	loop() {
         const loop =()=>{
-           // requestAnimationFrame(loop);
+            requestAnimationFrame(loop);
             this.renderer.render(this.scene, this.camera);
         }
         loop()
