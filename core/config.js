@@ -1,12 +1,18 @@
 import * as THREE from "three";
 import { baseMap } from "../asset/map/baseMap";
+import { baseAsset } from "../asset/baseAsset";
 
 export class config {
 	//renderer = 
 	constructor() {
 		this.renderer = new THREE.WebGLRenderer({ antialias:false, alpha:false});
-		this.scene = new baseMap().scene;
+		//this.scene = new baseMap().scene;
+		this.scene = new baseAsset().sceneControl;
 		this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+		window.addEventListener('sceneChanged', (event) => {
+			this.onSceneChanged(event.detail.newScene)
+		})
 
 		
 		this.init();
@@ -22,6 +28,11 @@ export class config {
 		this.camera.rotation.set(0,0,0);
 		this.scene.add(this.camera)
 		console.log(this.scene)
+	}
+
+	onSceneChanged(newScene){
+		//console.log(newScene)
+		this.scene = newScene
 	}
 
 	loop() {
