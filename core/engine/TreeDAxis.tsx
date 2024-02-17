@@ -1,13 +1,16 @@
 import { Vector3 } from "three";
 
 export class TreeDAxis {
-    constructor(){
-        this.scale = new Vector3(0, 0, 0);
+	scale: Vector3;
+	position: Vector3;
+	rotation: Vector3;
+	constructor() {
+		this.scale = new Vector3(0, 0, 0);
 		this.position = new Vector3(0, 0, 0);
-		this.rotation = new Vector3(0,0,0);
-    }
+		this.rotation = new Vector3(0, 0, 0);
+	}
 
-    //setter
+	//setter
 	setScale(x = 0.5, y = 0.5, z = 0.5) {
 		this.scale.set(x, y, z);
 	}
@@ -15,7 +18,7 @@ export class TreeDAxis {
 		this.position.set(x, y, z);
 	}
 
-	setRotation(x = 0, y = 0, z = 0){
+	setRotation(x = 0, y = 0, z = 0) {
 		this.rotation.set(x, y, z);
 	}
 
