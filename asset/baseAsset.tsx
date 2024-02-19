@@ -15,7 +15,7 @@ export class baseAsset {
     this.sceneControl = new baseMap().scene;
 
     setTimeout(() => {
-      this.setScene(new baseMapR().scene);
+      // this.setScene(new baseMapR().scene);
     }, 2000);
   }
 
