@@ -6,19 +6,49 @@
     <style>
       body {
         margin: 0;
+        overflow: hidden;
       }
-      .cssrender {
+
+      * {
+        outline: none;
+      }
+
+      .cssrender,
+      .render {
+        width: 100%;
+        height: 100%;
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100vh;
+        pointer-events: none;
+      }
+
+      .cssrender > div .s,
+      .cssrender > div .s div,
+      .cssrender > div .s video,
+      .cssrender > div .s div > video,
+      .cssrender > div .s iframe,
+      .cssrender > div .s div > iframe {
+        user-select: initial !important;
+        pointer-events: auto !important;
+      }
+
+      .cssrender > div :not(.s) {
+        pointer-events: none !important;
+      }
+
+      .css > div {
+        overflow: initial !important;
+      }
+
+      .render {
+        pointer-events: none;
       }
     </style>
   </head>
+
   <body>
     <script type="module" defer async src="./core/index.tsx"></script>
-
     <div class="container">
       <div class="cssrender"></div>
       <div class="render"></div>
